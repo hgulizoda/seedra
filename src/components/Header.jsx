@@ -1,28 +1,65 @@
-import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import instaLogo from "../assets/instalogo.svg";
-import { TextInput } from "@mantine/core";
-const Header = () => {
+import { NavLink } from "react-router-dom";
+
+function Header() {
   return (
-    <header>
-      <Link>
-        <img src={logo} />
-      </Link>
-      <nav>
-        <NavLink>ALL PRODUCTS</NavLink>
-        <NavLink>ABOUT SEEDRA</NavLink>
-        <NavLink>OUR BLOG</NavLink>
-        <NavLink>CONTACTS</NavLink>
-      </nav>
-      <div>
-        <Link>
-          <img src={instaLogo} alt="" />
-          <img src={instaLogo} alt="" />
-        </Link>
-        <TextInput size="md" radius="lg" placeholder="Input placeholder" />{" "}
+    <header
+      style={{
+        width: "100%",
+        height: "70px",
+        borderBottom: "1px solid #eee",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <div
+        className="container"
+        style={{
+          width: "100%",
+          margin: "0 auto",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <img src={logo} alt="" />
+
+        <nav
+          style={{
+            display: "flex",
+            gap: "25px",
+            fontSize: "16px",
+            color: "#333",
+          }}
+        >
+          <NavLink>All Products</NavLink>
+          <NavLink>About Seedra</NavLink>
+          <NavLink>Our Blog</NavLink>
+          <NavLink>Contacts</NavLink>
+        </nav>
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "15px",
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            style={{
+              padding: "8px 12px",
+              border: "1px solid #ccc",
+              borderRadius: "6px",
+            }}
+          />
+
+          <span style={{ fontSize: "20px", cursor: "pointer" }}>🛒</span>
+        </div>
       </div>
     </header>
   );
-};
+}
 
 export default Header;
